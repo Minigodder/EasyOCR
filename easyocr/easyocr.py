@@ -67,8 +67,8 @@ class Reader(object):
 
         if gpu is False:
             self.device = 'cpu'
-            if verbose:
-                LOGGER.warning('Using CPU. Note: This module is much faster with a GPU.')
+#             if verbose:
+#                 LOGGER.warning('Using CPU. Note: This module is much faster with a GPU.')
         elif gpu is True:
             if torch.cuda.is_available():
                 self.device = 'cuda'
@@ -76,8 +76,8 @@ class Reader(object):
                 self.device = 'mps'
             else:
                 self.device = 'cpu'
-                if verbose:
-                    LOGGER.warning('Neither CUDA nor MPS are available - defaulting to CPU. Note: This module is much faster with a GPU.')
+#                 if verbose:
+#                     LOGGER.warning('Neither CUDA nor MPS are available - defaulting to CPU. Note: This module is much faster with a GPU.')
         else:
             self.device = gpu
 
